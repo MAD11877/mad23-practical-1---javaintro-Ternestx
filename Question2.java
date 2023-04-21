@@ -10,7 +10,10 @@ public class Question2
      * Hint: in.nextDouble() to read double
      */
      
-    Scanner in = new Scanner(System.in);
-    double height = in.nextDouble();
+    Scanner MyObj = new Scanner(System.in);
+    double height = MyObj.nextDouble();
+    double weight = MyObj.nextDouble();
+    double bmi = weight/(height * height);
+    System.out.printf("%.1f",bmi);
   }
 }
