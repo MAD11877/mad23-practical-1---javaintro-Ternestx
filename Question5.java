@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Question5
@@ -27,6 +28,27 @@ public class Question5
      */
      
     Scanner in = new Scanner(System.in);
-    
+    ArrayList<Integer> numbers = new ArrayList<>();
+    int count = in.nextInt();
+
+    for (int i = count; i>0; i--){
+      int num = in.nextInt();
+      numbers.add(num);
+    }
+
+    int mode = 0;
+    int maxcount = 0;
+    for (int i = 0; i<numbers.size(); i++){
+      int value = numbers.get(i);
+      int counter = 0;
+      for (int j = 0; j<numbers.size(); j++){
+        if (numbers.get(j) == value) counter++;
+        if (counter>maxcount){
+          mode = value;
+          maxcount = counter;
+        }
+      }
+    }
+    System.out.println(mode);
   }
 }
